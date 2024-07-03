@@ -12,42 +12,56 @@ public class Application {
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("Enter operation (ex: addition, subtraction, multiplication, division, factorial):");
 			String operation = scanner.next();
+			// displays options to user and collects input
 			
-			
+			double a = 0;
+			double b = 0;		
 			switch (operation.toLowerCase()) {
 			case "addition":
 				System.out.println("Enter the first operand:");
-				double a = scanner.nextDouble();
+				 a = scanner.nextDouble();
 				System.out.println("Enter the second operand:");
-				double b = scanner.nextDouble();
+				 b = scanner.nextDouble();
 				System.out.println("Result: " + addition(a , b));
 				break;
+				// performs add operation
 			case "factorial":
 				System.out.println("Enter a number:");
 				double number = scanner.nextDouble();
 				System.out.println("Result: " + factorial(number));
 				break;
+				// performs factorial operation
 			case "subtraction":
 				System.out.println("Enter the first operand:");
-				double a1 = scanner.nextDouble();
+				 a = scanner.nextDouble();
 				System.out.println("Enter the second operand:");
-				double b1 = scanner.nextDouble();
-				System.out.println("Result: " + subtraction(a1 , b1));
+				 b = scanner.nextDouble();
+				System.out.println("Result: " + subtraction(a , b));
 				break;
+				// performs subtraction operation
 			case "multiplication":
 				System.out.println("Enter the first operand:");
-				double a2 = scanner.nextDouble();
+				 a = scanner.nextDouble();
 				System.out.println("Enter the second operand:");
-				double b2 = scanner.nextDouble();
-				System.out.println("Result: " + multiplication(a2 , b2));
+				 b = scanner.nextDouble();
+				System.out.println("Result: " + multiplication(a , b));
 				break;
+				// performs multiplication operation
 			case "division":
 				System.out.println("Enter the first operand:");
-				double a3 = scanner.nextDouble();
+				 a = scanner.nextDouble();
 				System.out.println("Enter the second operand:");
-				double b3 = scanner.nextDouble();
-				System.out.println("Result: " + division(a3 , b3));
+				 b = scanner.nextDouble();
+				System.out.println("Result: " + division(a , b));
+				if ( b == 0) {
+					throw new IllegalArgumentException("enter a nonzero digit");
+					
+					
+				}
+				
 				break;
+				
+				// performs division operation
 			}
 			}
 		}
@@ -82,6 +96,6 @@ public class Application {
 			return n * factorial(n-1);
 		}
 	}
-
+// defines methods
 }
 	
