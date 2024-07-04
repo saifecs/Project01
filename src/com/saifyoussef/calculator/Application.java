@@ -13,7 +13,7 @@ public class Application {
 		} else {
 			
 			while (true) {
-			System.out.println("Enter operation (ex: addition, subtraction, multiplication, division, factorial, power, sqrt, log, log10, sin, cos, tan):");
+			System.out.println("Enter operation (ex: addition, subtraction, multiplication, division, factorial, power, sqrt, log, log10, sin, cos, tan,permutation, permutationwithoutrecursion):");
 			String operation = scanner.next();
 			if ( operation . equalsIgnoreCase (" exit ") ) {
 				System . out . println (" Exiting calculator ...") ;
@@ -110,8 +110,22 @@ public class Application {
 				}
 				
 				break;
-				
 				// performs division operation
+			case "permutation":
+				System.out.println("Enter the total number of elements in the array:");
+				a = scanner.nextDouble();
+				System.out.println("Enter the tnumber of items to be selected:");
+				b = scanner.nextDouble();
+				System.out.println("Result: " + permutation(a , b));
+				break;
+			case "permutationwithoutrecursion":
+				System.out.println("Enter the total number of elements in the array:");
+				a = scanner.nextDouble();
+				System.out.println("Enter the tnumber of items to be selected:");
+				b = scanner.nextDouble();
+				System.out.println("Result: " + permutationwithoutrecursion(a , b));
+				break;
+				
 			}
 		}
 	}
@@ -192,9 +206,36 @@ public class Application {
 		return Math . tan ( angleRadians ) ;
 	}
 	
-	{
-
-}}
+	public static double permutation(double a, double b){
+		if ( a < 0 ) {
+			throw new IllegalArgumentException("ensure the total number of elements is not less than 0");
+		}
+		if (b > a) {
+			throw new IllegalArgumentException("ensure that the number of selected items does not exceed the total number of elements in the\n"
+					+ "array.");
+		}
+		if (b == 0) {
+			return 1;
+		}
+		return a * permutation(a - 1, b - 1);
+	}
+	public static double permutationwithoutrecursion(double a, double b){
+		if ( a < 0) {
+			throw new IllegalArgumentException("ensure the total number of elements is not less than 0");
+		}
+		if (b > a) {
+			throw new IllegalArgumentException("ensure that the number of selected items does not exceed the total number of elements in the\n"
+					+ "array.");
+	}
+		if (b == 0) {
+			return 1;
+		}
+		double permutationwithoutrecursion = 1;
+		for (double i = 0; i < b ; i++){
+			permutationwithoutrecursion *= (a - 1);
+		}
+		return permutationwithoutrecursion;
+		}}
 // defines methods
 	
 
