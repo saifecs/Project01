@@ -1,3 +1,7 @@
+//Application.java
+//lab01
+//saif youssef
+//jul ,4
 package com.saifyoussef.calculator;
 import java.util.Scanner;
 
@@ -104,7 +108,7 @@ public class Application {
 				 b = scanner.nextDouble();
 				System.out.println("Result: " + division(a , b));
 				if ( b == 0) {
-					throw new IllegalArgumentException("enter a nonzero digit");
+					System.out.println("enter a nonzero digit");
 					
 					
 				}
@@ -114,14 +118,14 @@ public class Application {
 			case "permutation":
 				System.out.println("Enter the total number of elements in the array:");
 				a = scanner.nextDouble();
-				System.out.println("Enter the tnumber of items to be selected:");
+				System.out.println("Enter the number of items to be selected:");
 				b = scanner.nextDouble();
 				System.out.println("Result: " + permutation(a , b));
 				break;
 			case "permutationwithoutrecursion":
 				System.out.println("Enter the total number of elements in the array:");
 				a = scanner.nextDouble();
-				System.out.println("Enter the tnumber of items to be selected:");
+				System.out.println("Enter the number of items to be selected:");
 				b = scanner.nextDouble();
 				System.out.println("Result: " + permutationwithoutrecursion(a , b));
 				break;
@@ -208,11 +212,13 @@ public class Application {
 	
 	public static double permutation(double a, double b){
 		if ( a < 0 ) {
-			throw new IllegalArgumentException("ensure the total number of elements is not less than 0");
+			System.out.print("ensure the total number of elements is not less than 0");
+			return 0;
 		}
 		if (b > a) {
-			throw new IllegalArgumentException("ensure that the number of selected items does not exceed the total number of elements in the\n"
+			System.out.print("ensure that the number of selected items does not exceed the total number of elements in the\n"
 					+ "array.");
+			return 0;
 		}
 		if (b == 0) {
 			return 1;
@@ -221,10 +227,10 @@ public class Application {
 	}
 	public static double permutationwithoutrecursion(double a, double b){
 		if ( a < 0) {
-			throw new IllegalArgumentException("ensure the total number of elements is not less than 0");
+			System.out.println("ensure the total number of elements is not less than 0");
 		}
 		if (b > a) {
-			throw new IllegalArgumentException("ensure that the number of selected items does not exceed the total number of elements in the\n"
+			System.out.println("ensure that the number of selected items does not exceed the total number of elements in the\n"
 					+ "array.");
 	}
 		if (b == 0) {
